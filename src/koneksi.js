@@ -7,7 +7,7 @@ const conn = mysql.createConnection({
 });
 
 // tes koneksi
-connection.connect((err) => {
+conn.connect((err) => {
   if (err) {
     console.log("koneksi:"+err.stack);
     return;

@@ -4,8 +4,7 @@ var _koneksi = _interopRequireDefault(require("./koneksi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var express = require('express'); // const mysql = require('mysql');
-
+var express = require('express');
 
 var app = express(); // konfig static file (css, js dan gambar)
 
@@ -15,16 +14,7 @@ app.use(express.urlencoded({
   extended: false
 })); // hubungkan ke mysql
 
-var connection = _koneksi["default"]; // tes koneksi
-
-connection.connect(function (err) {
-  if (err) {
-    console.log("koneksi:" + err.stack);
-    return;
-  }
-
-  console.log('db: success');
-}); // halaman depan
+var connection = _koneksi["default"]; // halaman depan
 
 app.get('/', function (req, res) {
   res.render('home.ejs');

@@ -14,6 +14,15 @@ var conn = mysql.createConnection({
   // sesuaikan
   database: 'daftar_belanja' // sesuaikan
 
+}); // tes koneksi
+
+conn.connect(function (err) {
+  if (err) {
+    console.log("koneksi:" + err.stack);
+    return;
+  }
+
+  console.log('db: success');
 });
 var _default = conn;
 exports["default"] = _default;
