@@ -1,8 +1,12 @@
 ## Project Setup
-#### Create database
+#### Create database (MySQL)
 - name: ```daftar_belanja```
 - table: ```items```
-  - fields: ```id```, ```name```
+
+| Fields | Type | Length |
+|---|---|---|
+| id | integer | 11 
+| name | varchar | 30
 
 #### Install dependencies
 ```
