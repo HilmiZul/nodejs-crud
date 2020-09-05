@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Belanjaan</title>
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="nav justify-content-center mt-3 mb-3">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/list" class="nav-link">List</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-header text-right">
+            <a href="/tambah" class="btn btn-info">+ Tambah</a>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% items.forEach((item) => { %>
+                <tr>
+                  <td><%= item.id %></td>
+                  <td><%= item.name %></td>
+                  <td>
+                    <a href="/edit/<%= item.id %>">Edit</a> / 
+                    <a href="#" data-toggle="modal" data-target="#list-<%= item.id %>">Delete</a>
+                  </td>
+                </tr>
+                <div class="modal fade" id="list-<%= item.id %>">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header bg-danger text-white">
+                        HAPUS?
+                      </div>  
+                      <div class="modal-body">
+                        Apakah Anda ingin menghapus data ini?
+                      </div>
+                      <div class="modal-footer">
+                        <a href="/delete/<%= item.id %>" class="btn btn-outline-danger">Ya, Hapus</a>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Tidak</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
