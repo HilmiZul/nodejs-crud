@@ -1,3 +1,6 @@
+## About
+Tugas akhir diklat *online* di [Progate](https://progate.com).
+
 ## Project Setup
 #### Create database (MySQL)
 - name: ```daftar_belanja```
