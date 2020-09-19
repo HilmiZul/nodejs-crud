@@ -11,7 +11,7 @@ Tugas akhir diklat *online* di [Progate](https://progate.com).
 | id | integer | 11 
 | name | varchar | 30
 
-#### Install dependencies
+## Install dependencies
 ```
 npm install
 ```
